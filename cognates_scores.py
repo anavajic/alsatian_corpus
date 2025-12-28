@@ -39,8 +39,7 @@ def pron_score(x, y):
 
 #https://stackoverflow.com/questions/13331698/how-to-apply-a-function-to-two-columns-of-pandas-dataframe
 
-fr["orth_score"] = fr.apply(lambda x: orth_score(x.French, x.Alsatian), axis=1)
-de["orth_score"] = de.apply(lambda x: orth_score(x.German, x.Alsatian), axis=1)
-fr["pron_score"] = fr.apply(lambda x: pron_score(x.fr_pron, x.als_pron), axis=1)
-de["pron_score"] = de.apply(lambda x: pron_score(x.de_pron, x.als_pron), axis=1)
+dataset["orth_score"] = dataset.apply(lambda x: orth_score(x.German, x.Alsatian), axis=1)
+dataset["pron_score"] = dataset.apply(lambda x: pron_score(x.fr_pron, x.als_pron), axis=1)
+
 
