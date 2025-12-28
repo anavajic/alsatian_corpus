@@ -8,7 +8,7 @@ import difflib
 dataset = pd.read_excel("german_french.ods")
 
 
-def add_pronunciation:
+def add_pronunciation():
     dataset["de_pron"] = dataset["German"].apply(phonetics.dmetaphone)
     dataset["als_pron"] = dataset["Alsatian"].apply(phonetics.dmetaphone)
     dataset["fr_pron"] = dataset["French"].apply(phonetics.dmetaphone)
@@ -44,7 +44,3 @@ de["orth_score"] = de.apply(lambda x: orth_score(x.German, x.Alsatian), axis=1)
 fr["pron_score"] = fr.apply(lambda x: pron_score(x.fr_pron, x.als_pron), axis=1)
 de["pron_score"] = de.apply(lambda x: pron_score(x.de_pron, x.als_pron), axis=1)
 
-de.head()
-
-de.to_excel("DE_FINAL_SCORES.xlsx")
-fr.to_excel("FR_FINAL_SCORES.xlsx")

@@ -22,3 +22,5 @@ def match_search():
             if tr_retrieve(wf, tf):
                 german_french.loc[i,"Alsatian"] = alsatian_aligned.loc[j]["Alsatian"]
 
+
+
