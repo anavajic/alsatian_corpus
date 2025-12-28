@@ -12,9 +12,9 @@ def match_search():
 
     for i in range(len(german_french)):
         for j in range(len(alsatian_aligned)):
-            wg = german_french.loc[i]["loan_word"].lower()
+            wg = german_french.loc[i]["German"].lower()
             tg = alsatian_aligned.loc[j]["German"].lower().split(";")
-            wf = german_french.loc[i]["original_word"].lower()
+            wf = german_french.loc[i]["French"].lower()
             tf = alsatian_aligned.loc[j]["French"].lower().split(";")
 
             if tr_retrieve(wg, tg):
