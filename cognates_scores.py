@@ -1,23 +1,19 @@
 
-#! pip install phonetics
-
 import phonetics
 import pandas as pd
 import difflib
 
-dataset = pd.read_excel("german_french.ods")
-
-
-def add_pronunciation():
-    dataset["de_pron"] = dataset["German"].apply(phonetics.dmetaphone)
-    dataset["als_pron"] = dataset["Alsatian"].apply(phonetics.dmetaphone)
-    dataset["fr_pron"] = dataset["French"].apply(phonetics.dmetaphone)
-    
+def add_pronunciation(data):
+    data["germ_pron"] = data["German"].apply(phonetics.dmetaphone)
+    data["als_pron"] = data["Alsatian"].apply(phonetics.dmetaphone)
+    data["fr_pron"] = data["French"].apply(phonetics.dmetaphone)
+    return data
 
 def orth_score(x, y):
   return difflib.SequenceMatcher(None, x.lower(), y.lower()).ratio()
 
 def pron_score(x, y):
+  #dodati provjeru da ne prolazi ako je tocka
   scores = []
   s1 = difflib.SequenceMatcher(None, x[0].lower(), y[0].lower()).ratio()
   scores.append(s1)
@@ -37,9 +33,5 @@ def pron_score(x, y):
     scores.append(s2)
   return max(scores)
 
-#https://stackoverflow.com/questions/13331698/how-to-apply-a-function-to-two-columns-of-pandas-dataframe
-
-dataset["orth_score"] = dataset.apply(lambda x: orth_score(x.German, x.Alsatian), axis=1)
-dataset["pron_score"] = dataset.apply(lambda x: pron_score(x.fr_pron, x.als_pron), axis=1)
 
 

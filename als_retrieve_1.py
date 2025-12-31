@@ -5,23 +5,22 @@ def tr_retrieve(word, tr):
         return True
     return False
 
-def match_search():
-    dataset = pd.read_excel("german-french.ods")
-    alsatian_dict = pd.read_excel("alsatian-alignments.ods")
-    dataset["Alsatian"] = "."
+def match_search(data):
+    alsatian_dict = pd.read_excel("alsatian-alignments.xlsx")
+    data["Alsatian"] = "."
 
-    for i in range(len(dataset)):
+    for i in range(len(data)):
         for j in range(len(alsatian_dict)):
-            wg = dataset.loc[i]["German"].lower()
+            wg = data.loc[i]["German"].lower()
             tg = alsatian_dict.loc[j]["German"].lower().split(";")
-            wf = dataset.loc[i]["French"].lower()
+            wf = data.loc[i]["French"].lower()
             tf = alsatian_dict.loc[j]["French"].lower().split(";")
 
             if tr_retrieve(wg, tg):
-                dataset.loc[i,"Alsatian"] = alsatian_dict.loc[j]["Alsatian"]
+                data.loc[i,"Alsatian"] = alsatian_dict.loc[j]["Alsatian"]
             if tr_retrieve(wf, tf):
-                dataset.loc[i,"Alsatian"] = alsatian_dict.loc[j]["Alsatian"]
-    return dataset
+                data.loc[i,"Alsatian"] = alsatian_dict.loc[j]["Alsatian"]
+    return data
 
 
 
