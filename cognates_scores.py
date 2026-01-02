@@ -15,7 +15,7 @@ def orth_score(x, y):
   return "."
 
 def pron_score(x, y):
-  if x != "." and y != ".":
+  if x != ('', '') and y != ('', ''):
     scores = []
     s1 = difflib.SequenceMatcher(None, x[0].lower(), y[0].lower()).ratio()
     scores.append(s1)

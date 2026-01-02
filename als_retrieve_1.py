@@ -18,9 +18,9 @@ def match_search(data):
             tf = alsatian_dict.loc[j]["French"].lower().split(";")
 
             if tr_retrieve(wg, tg):
-                data.loc[i,"Alsatian"] = clean(alsatian_dict.loc[j]["Alsatian"])[0]
+                data.loc[i,"Alsatian"] = clean(alsatian_dict.loc[j]["Alsatian"]).split(";")[0]
             elif tr_retrieve(wf, tf):
-                data.loc[i,"Alsatian"] = clean(alsatian_dict.loc[j]["Alsatian"])[0]
+                data.loc[i,"Alsatian"] = clean(alsatian_dict.loc[j]["Alsatian"]).split(";")[0]
     return data
 
 
