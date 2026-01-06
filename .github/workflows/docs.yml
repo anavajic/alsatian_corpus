@@ -7,17 +7,17 @@ permissions:
     contents: read
 jobs:
     build:
-    runs-on: ubuntu-latest
-    steps:
-       - uses: actions/checkout@v6
-       - uses: actions/setup-python@v6
-         with: 
-             python-version: '3.14'
-       - run: pip install pdoc
-       - run: pdoc main.py als_retrieve_1.py als_retrieve_2_1.py cognates_scores.py --docformat google -o docs/
-       - uses: actions/upload-pages-artifact@v4
-         with:
-          path: docs/
+        runs-on: ubuntu-latest
+        steps:
+           - uses: actions/checkout@v6
+           - uses: actions/setup-python@v6
+             with: 
+                 python-version: '3.14'
+           - run: pip install pdoc
+           - run: pdoc main.py als_retrieve_1.py als_retrieve_2_1.py cognates_scores.py --docformat google -o docs/
+           - uses: actions/upload-pages-artifact@v4
+             with:
+              path: docs/
     deploy:
         needs: build
         runs-on: ubuntu-latest
