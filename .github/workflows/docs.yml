@@ -15,7 +15,6 @@ jobs:
                  python-version: '3.14'
            - run: pip install pdoc
            - run: pip install pandas
-           - run: pip install difflib
            - run: pip install phonetics
            - run: pdoc main.py als_retrieve_1.py als_retrieve_2_1.py cognates_scores.py --docformat google -o docs/
            - uses: actions/upload-pages-artifact@v4
