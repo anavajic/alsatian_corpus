@@ -22,9 +22,12 @@ def orth_score(x: str, y: str) -> float | str:
   :param y: The second string to be compared. Should be a non-period string for valid comparison.
   :return: A similarity ratio between the two strings as a float if both are non-period strings. Returns a period (".") if either of the inputs is a period string.
   """
-  if x != "." and y != ".":
-    return difflib.SequenceMatcher(None, x.lower(), y.lower()).ratio()
-  return "."
+  if isinstance(x, str) and len(x) > 0 and isinstance(y, str) and len(y) > 0:
+    if x != "." and y != ".":
+      return difflib.SequenceMatcher(None, x.lower(), y.lower()).ratio()
+    return "."
+  else:
+    raise ValueError("Invalid input")
 
 def pron_score(x: tuple[str], y: tuple[str]) -> float | str:
   """

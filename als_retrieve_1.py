@@ -8,9 +8,12 @@ def tr_retrieve(word: str, tr: list) -> bool:
     :param tr: A list containing French or German words
     :return: Boolean value indicating whether the word exists in the list.
     """
-    if word in tr:
-        return True
-    return False
+    if isinstance(word, str) and isinstance(tr, list):
+        if word in tr and word.replace("-", "").isalpha():
+            return True
+        return False
+    else:
+        raise ValueError("Invalid input format")
 
 def match_search(data: pd.DataFrame) -> pd.DataFrame:
     """
