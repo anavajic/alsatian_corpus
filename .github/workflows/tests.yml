@@ -13,4 +13,5 @@ jobs:
           python-version: '3.14'
       - run: pip install pytest
       - run: pip install pandas
+      - run: pip install phonetics
       - run: pytest tests/
