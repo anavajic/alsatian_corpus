@@ -29,7 +29,7 @@ def orth_score(x: str, y: str) -> float | str:
   else:
     raise ValueError("Invalid input")
 
-def pron_score(x: tuple[str], y: tuple[str]) -> float | str:
+def pron_score(x: tuple[str, str], y: tuple[str, str]) -> float | str:
   """
   Calculates the string similarity score between two pronunciations using the difflib.SequenceMatcher.ratio() function if a given French or German word has an Alsatian translation assigned
   :param x: A tuple containing two string elements. The first element represents the primary string, and the second element represents the optional string for comparison.

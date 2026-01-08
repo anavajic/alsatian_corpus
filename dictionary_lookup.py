@@ -1,5 +1,5 @@
 import pandas as pd
-import als_retrieve_2_1
+import clean
 
 def tr_retrieve(word: str, tr: list) -> bool:
     """
@@ -32,9 +32,9 @@ def match_search(data: pd.DataFrame) -> pd.DataFrame:
             tf = alsatian_dict.loc[j]["French"].lower().split(";")
 
             if tr_retrieve(wg, tg):
-                data.loc[i,"Alsatian"] = als_retrieve_2_1.clean(alsatian_dict.loc[j]["Alsatian"]).split(";")[0]
+                data.loc[i,"Alsatian"] = clean.clean(alsatian_dict.loc[j]["Alsatian"]).split(";")[0]
             elif tr_retrieve(wf, tf):
-                data.loc[i,"Alsatian"] = als_retrieve_2_1.clean(alsatian_dict.loc[j]["Alsatian"]).split(";")[0]
+                data.loc[i,"Alsatian"] = clean.clean(alsatian_dict.loc[j]["Alsatian"]).split(";")[0]
     return data
 
 

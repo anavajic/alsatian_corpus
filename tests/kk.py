@@ -1,5 +1,5 @@
 import als_retrieve_1
 import difflib
-x = "Flora"
-y = "Flora"
-print(difflib.SequenceMatcher(None, x.lower(), y.lower()).ratio())
+pron1 = ('AFRNT', '')
+pron2 = ('PLTKNK', '')
+print(difflib.SequenceMatcher(None, pron1[0].lower(), pron2[0].lower()).ratio())
