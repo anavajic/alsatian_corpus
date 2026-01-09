@@ -10,6 +10,9 @@ Dependencies to install: pandas and phonetics libraries
 Instructions: Place the French-German lexicon that you wish to add Alsatian translations to in the root directory of the project in csv format. Change the file names assigned to the variable dataset (input dataset) and to the action dataset.to_csv() (output dataset) to match the names of your input file and desired output file. Run the main.py script. When the script is run with the lexicon by Nath et al.(2022), which contains 1365 French-German word pairs, it runs for about 30 minutes.
 
 Bibliography:
+
 Bernhard, D. (2014). Adding Dialectal Lexicalisations to Linked Open Data Resources: The Example of Alsatian. Proceedings of the Workshop on Collaboration and Computing for Under Resourced Languages in the Linked Open Data Era (CCURL 2014), 23–29. https://hal.science/hal-00966820/document
+
 Nath, A., Mahdipour Saravani, S., Khebour, I., Mannan, S., Li, Z., & Krishnaswamy, N. (2022). A Generalized Method for Automated Multilingual Loanword Detection. In N. Calzolari, C.-R. Huang, H. Kim, J. Pustejovsky, L. Wanner, K.-S. Choi, P.-M. Ryu, H.-H. Chen, L. Donatelli, H. Ji, S. Kurohashi, P. Paggio, N. Xue, S. Kim, Y. Hahm, Z. He, T. K. Lee, E. Santus, F. Bond, & S.-H. Na (Eds.), Proceedings of the 29th International Conference on Computational Linguistics (pp. 4996–5013). International Committee on Computational Linguistics. https://aclanthology.org/2022.coling-1.442
+
 Philips, L. (2000) “The double metaphone search algorithm,” C/C++ Users J., 18(6), pp. 38–43.
