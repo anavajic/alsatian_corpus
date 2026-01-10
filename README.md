@@ -7,6 +7,7 @@ The features that cognate detection models are trained on are orthographic and p
 The project uses the Alsatian-German-French lexicon created by Bernhard (2014) as a reference point to add Alsatian translations to a French-German lexicon. The French-German lexicon created by Nath et al. (2022) is used to demonstrate the principle, but the scripts can be used to add Alsatian translations to any French-German lexicon. Once the translations have been added, pronunciations of all words in the dataset are generated using the Double Metaphone algorithm (Philips 2000), and orthography and pronunciation similarity scores between French-Alsatian and German-Alsatian pairs are calculated using the difflib ratio() method. In order to train a model on the created dataset, word pairs need to be annotated for cognacy (label 1 for related words and 0 for unrelated).
 
 Dependencies to install: pandas and phonetics libraries
+
 Instructions: Place the French-German lexicon that you wish to add Alsatian translations to in the root directory of the project in csv format. Change the file names assigned to the variable dataset (input dataset) and to the action dataset.to_csv() (output dataset) to match the names of your input file and desired output file. Run the main.py script. When the script is run with the lexicon by Nath et al.(2022), which contains 1365 French-German word pairs, it runs for about 30 minutes.
 
 Bibliography:
